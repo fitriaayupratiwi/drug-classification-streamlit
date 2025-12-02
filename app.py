@@ -5,25 +5,16 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
-import os
 
 # ======================
 # Load Dataset Lokal
 # ======================
-# @st.cache_data
+@st.cache_data
+def load_data():
+    df = pd.read_csv("drug200.csv") 
+    return df
 
-st.write("Working dir:", os.getcwd())
-st.write("List files:", os.listdir())
-if not os.path.exists("drug200.csv"):
-    st.error("❌ drug200.csv tidak ditemukan — periksa path & nama file")
-    st.stop()
-df = pd.read_csv("drug200.csv")
-
-# def load_data():
-#     df = pd.read_csv("drug200.csv") 
-#     return df
-
-# df = load_data()
+df = load_data()
 
 st.title("Sistem Pendukung Keputusan - KNN Drug Classification")
 
