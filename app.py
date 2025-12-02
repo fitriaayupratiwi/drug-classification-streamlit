@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # ======================
 @st.cache_data
 def load_data():
-    df = pd.read_csv("drug200.csv")  # file lokal
+    df = pd.read_csv("drug200.csv") 
     return df
 
 df = load_data()
