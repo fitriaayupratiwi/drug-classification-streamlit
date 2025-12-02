@@ -5,12 +5,13 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
+import os
 
 # ======================
 # Load Dataset Lokal
 # ======================
-@st.cache_data
-import os
+# @st.cache_data
+
 st.write("Working dir:", os.getcwd())
 st.write("List files:", os.listdir())
 if not os.path.exists("drug200.csv"):
